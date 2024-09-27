@@ -126,7 +126,7 @@ def emfToEdf(emf):
     edf = np.stack([keys,cumFreqs],axis=-1)
     return edf
 
-def plotEDF(edf,  force_display=True,points_at_jump=True, confidence_band=False, alpha=0.95):
+def plotEDF(edf,  force_display=True,points_at_jump=True, confidence_band=False, alpha=0.95,color='blue',title="Empirical Distribution Function"):
     """
     Plots the empirical distribution function
 
@@ -146,8 +146,8 @@ def plotEDF(edf,  force_display=True,points_at_jump=True, confidence_band=False,
 
     if (points_at_jump):
         plt.scatter(keys,cumFreqs)
-    plt.hlines(cumFreqs[:-1],keys[:-1],keys[1:])
-    plt.vlines(keys[1:],cumFreqs[:-1],cumFreqs[1:],linestyle=':')
+    plt.hlines(cumFreqs[:-1],keys[:-1],keys[1:],color=color)
+    plt.vlines(keys[1:],cumFreqs[:-1],cumFreqs[1:],linestyle=':',color=color)
 
     if (confidence_band):
         import numpy as np
@@ -164,7 +164,7 @@ def plotEDF(edf,  force_display=True,points_at_jump=True, confidence_band=False,
     #plt.step(keys,cumFreqs,where='post')
 
     #Title
-    plt.title("Empirical Distribution Function")
+    plt.title(title)
 
     if (force_display):
         # Force displaying

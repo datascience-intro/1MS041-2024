@@ -7523,13 +7523,37 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72982741">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3daf44f0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Introduction-to-Data-Science"><a href="http://datascience-intro.github.io/1MS041-2024/">Introduction to Data Science</a><a class="anchor-link" href="#Introduction-to-Data-Science">¶</a></h1><h2 id="1MS041,-2024">1MS041, 2024<a class="anchor-link" href="#1MS041,-2024">¶</a></h2><p>©2024 Raazesh Sainudiin, Benny Avelin. <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0 International     (CC BY 4.0)</a></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=41d25c11">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">generator</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">size</span><span class="p">,</span><span class="n">seed</span><span class="p">:</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
+<span class="n">uniform_result</span> <span class="o">=</span> <span class="n">problem4_uniform</span><span class="p">(</span><span class="n">generator</span><span class="o">=</span><span class="n">generator</span><span class="p">,</span><span class="n">period</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">Utils</span> <span class="kn">import</span> <span class="n">makeEMF</span><span class="p">,</span><span class="n">makeEDF</span>
+
+<span class="n">edf</span> <span class="o">=</span> <span class="n">makeEDF</span><span class="p">(</span><span class="n">uniform_result</span><span class="p">)</span>
+
+<span class="n">true_edf</span> <span class="o">=</span> <span class="n">edf</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">deviation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">edf</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">true_edf</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">Utils</span> <span class="kn">import</span> <span class="n">plotEDF</span>
+<span class="n">plotEDF</span><span class="p">(</span><span class="n">edf</span><span class="p">,</span><span class="n">force_display</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span><span class="n">points_at_jump</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
