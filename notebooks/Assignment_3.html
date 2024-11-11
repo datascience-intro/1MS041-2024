@@ -7523,13 +7523,357 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a1cd7cb3">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7d78b752">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Introduction-to-Data-Science"><a href="http://datascience-intro.github.io/1MS041-2024/">Introduction to Data Science</a><a class="anchor-link" href="#Introduction-to-Data-Science">¶</a></h1><h2 id="1MS041,-2024">1MS041, 2024<a class="anchor-link" href="#1MS041,-2024">¶</a></h2><p>©2024 Raazesh Sainudiin, Benny Avelin. <a href="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0 International     (CC BY 4.0)</a></p>
+<h1 id="Assignment-3-for-Course-1MS041">Assignment 3 for Course 1MS041<a class="anchor-link" href="#Assignment-3-for-Course-1MS041">¶</a></h1><p>Make sure you pass the <code># ... Test</code> cells and
+submit your solution notebook in the corresponding assignment on the course website. You can submit multiple times before the deadline and your highest score will be used.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7a3f27d5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Assignment-3,-PROBLEM-1">Assignment 3, PROBLEM 1<a class="anchor-link" href="#Assignment-3,-PROBLEM-1">¶</a></h2><p>Maximum Points = 8</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ea37109a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Download the updated data folder from the course github website or just download directly the file <a href="https://github.com/datascience-intro/1MS041-2024/blob/main/notebooks/data/smhi.csv">https://github.com/datascience-intro/1MS041-2024/blob/main/notebooks/data/smhi.csv</a> from the github website and put it inside your data folder, i.e. you want the path <code>data/smhi.csv</code>. The data was aquired from SMHI (Swedish Meteorological and Hydrological Institute) and constitutes per hour measurements of wind in the Uppsala Aut station. The data consists of windspeed and direction. Your goal is to load the data and work with it a bit. The code you produce should load the file as it is, please do not alter the file as the autograder will only have access to the original file.</p>
+<p>The file information is in Swedish so you need to use some translation service, for instance <code>Google translate</code> or ChatGPT.</p>
+<ol>
+<li>[2p] Load the file, for instance using the <code>csv</code> package. Put the wind-direction as a numpy array and the wind-speed as another numpy array.</li>
+<li>[2p] Use the wind-direction which is an angle in degrees and convert it into a point on the unit circle. Store the <code>x_coordinate</code> as one array and the <code>y_coordinate</code> as another. From these coordinates, construct the wind-velocity vector.</li>
+<li>[2p] Calculate the average wind velocity and convert it back to direction and compare it to just taking average of the wind direction as given in the data-file.</li>
+<li>[2p] The wind velocity is a $2$-dimensional random variable, calculate the empirical covariance matrix which should be a numpy array of shape (2,2).</li>
+</ol>
+<p>For you to wonder about, is it more likely for you to have headwind or not when going to the university in the morning.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1d555ce1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">problem1_wind_direction</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem1_wind_speed</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2a021927">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The wind direction is given as a compass direction in degrees (0-360)</span>
+<span class="c1"># convert it to x and y coordinates using the standard mathematical convention</span>
+<span class="n">problem1_wind_direction_x_coordinate</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem1_wind_direction_y_coordinate</span> <span class="o">=</span> <span class="n">XXX</span>
+
+
+<span class="n">problem1_wind_velocity_x_coordinate</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem1_wind_velocity_y_coordinate</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e5eaa4a4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Put the average wind velocity x and y coordinates here in these variables</span>
+<span class="n">problem1_average_wind_velocity_x_coordinate</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem1_average_wind_velocity_y_coordinate</span> <span class="o">=</span> <span class="n">XXX</span>
+
+<span class="c1"># First calculate the angle of the average wind velocity vector in degrees</span>
+<span class="n">problem1_average_wind_velocity_angle_degrees</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="c1"># Then calculate the average angle of the wind direction in degrees (using the wind direction in the data)</span>
+<span class="n">problem1_average_wind_direction_angle_degrees</span> <span class="o">=</span> <span class="n">XXX</span>
+
+<span class="c1"># Finally, are they the same? Answer as a boolean value (True or False)</span>
+<span class="n">problem1_same_angle</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=30621c34">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">problem1_wind_velocity_covariance_matrix</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2266a760">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Assignment-3,-PROBLEM-2">Assignment 3, PROBLEM 2<a class="anchor-link" href="#Assignment-3,-PROBLEM-2">¶</a></h2><p>Maximum Points = 8</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45238a00">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>For this problem you will need the <a href="https://pandas.pydata.org/">pandas</a> package and the <a href="https://scikit-learn.org/stable/">sklearn</a> package. Inside the <code>data</code> folder from the course website you will find a file called <code>indoor_train.csv</code>, this file includes a bunch of positions in (X,Y,Z) and also a location number. The idea is to assign a room number (Location) to the coordinates (X,Y,Z).</p>
+<ol>
+<li>[2p] Take the data in the file <code>indoor_train.csv</code> and load it using pandas into a dataframe <code>df_train</code></li>
+<li>[3p] From this dataframe <code>df_train</code>, create two numpy arrays, one <code>Xtrain</code> and <code>Ytrain</code>, they should have sizes <code>(1154,3)</code> and <code>(1154,)</code> respectively. Their <code>dtype</code> should be <code>float64</code> and <code>int64</code> respectively.</li>
+<li>[3p] Train a Support Vector Classifier, <code>sklearn.svc.SVC</code>, on <code>Xtrain, Ytrain</code> with <code>kernel='linear'</code> and name the trained model <code>svc_train</code>.</li>
+</ol>
+<p>To mimic how <a href="https://www.kaggle.com/">kaggle</a> works, the Autograder has access to a hidden test-set and will test your fitted model.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a13a0482">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">df_train</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=da145026">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">Xtrain</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">Ytrain</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c0663333">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">svc_train</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4e1452bd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Assignment-3,-PROBLEM-3">Assignment 3, PROBLEM 3<a class="anchor-link" href="#Assignment-3,-PROBLEM-3">¶</a></h2><p>Maximum Points = 8</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ec7f987">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Let us build a proportional model ($\mathbb{P}(Y=1 \mid X) = G(\beta_0+\beta \cdot X)$ where $G$ is the logistic function) for the spam vs not spam data. Here we assume that the features are presence vs not presence of a word, let $X_1,X_2,X_3$ denote the presence (1) or absence (0) of the words $("free", "prize", "win")$.</p>
+<ol>
+<li><p>[2p] Load the file <code>data/spam.csv</code> and create two numpy arrays, <code>problem3_X</code> which has shape <strong>(n_texts,3)</strong> where each feature in <code>problem3_X</code> corresponds to $X_1,X_2,X_3$ from above, <code>problem3_Y</code> which has shape <strong>(n_texts,)</strong> and consists of a $1$ if the email is spam and $0$ if it is not. Split this data into a train-calibration-test sets where we have the split $40\%$, $20\%$, $40\%$, put this data in the designated variables in the code cell.</p>
+</li>
+<li><p>[2p] Follow the calculation from the lecture notes where we derive the logistic regression and implement the final loss function inside the class <code>ProportionalSpam</code>. You can use the <code>Test</code> cell to check that it gives the correct value for a test-point.</p>
+</li>
+<li><p>[2p] Train the model <code>problem3_ps</code> on the training data. The goal is to calibrate the probabilities output from the model. Start by creating a new variable <code>problem3_X_pred</code> (shape <code>(n_samples,1)</code>) which consists of the predictions of <code>problem3_ps</code> on the calibration dataset. Then train a calibration model using <code>sklearn.tree.DecisionTreeRegressor</code>, store this trained model in <code>problem3_calibrator</code>. Recall that calibration error is the following for a fixed function $f$
+$$
+ \sqrt{\mathbb{E}[|\mathbb{E}[Y \mid f(X)] - f(X)|^2]}.
+$$</p>
+</li>
+<li><p>[2p] Use the trained model <code>problem3_ps</code> and the calibrator <code>problem3_calibrator</code> to make final predictions on the testing data, store the prediction in <code>problem3_final_predictions</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5f0bc703">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">problem3_X</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem3_Y</span> <span class="o">=</span> <span class="n">XXX</span>
+
+<span class="n">problem3_X_train</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem3_X_calib</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem3_X_test</span> <span class="o">=</span> <span class="n">XXX</span>
+
+<span class="n">problem3_Y_train</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem3_Y_calib</span> <span class="o">=</span> <span class="n">XXX</span>
+<span class="n">problem3_Y_test</span> <span class="o">=</span> <span class="n">XXX</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">problem3_X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">problem3_X_calib</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">problem3_X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">problem3_Y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">problem3_Y_calib</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">problem3_Y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=522b4096">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ProportionalSpam</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coeffs</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="c1"># define the objective/cost/loss function we want to minimise</span>
+    <span class="k">def</span> <span class="nf">loss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">coeffs</span><span class="p">):</span>
+        
+        <span class="k">return</span> <span class="n">XXX</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+        <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+
+        <span class="c1">#Use the f above together with an optimization method from scipy</span>
+        <span class="c1">#to find the coefficients of the model</span>
+        <span class="n">opt_loss</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">coeffs</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">loss</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">coeffs</span><span class="p">)</span>
+        <span class="n">initial_arguments</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">opt_loss</span><span class="p">,</span> <span class="n">initial_arguments</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s1">'cg'</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coeffs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">x</span>
+    
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">):</span>
+        <span class="c1">#Use the trained model to predict Y</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coeffs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">G</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">G</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">coeffs</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">coeffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="o">/</span><span class="mi">10</span> <span class="c1"># This rounding is to help you with the calibration</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b97f059a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">problem3_ps</span> <span class="o">=</span> <span class="n">XXX</span>
+
+<span class="n">problem3_X_pred</span> <span class="o">=</span> <span class="n">XXX</span>
+
+<span class="n">problem3_calibrator</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=07f477aa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">problem3_final_predictions</span> <span class="o">=</span> <span class="n">XXX</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51c0985f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h4 id="Local-Test-for-Assignment-3,-PROBLEM-3">Local Test for Assignment 3, PROBLEM 3<a class="anchor-link" href="#Local-Test-for-Assignment-3,-PROBLEM-3">¶</a></h4><p>Evaluate cell below to make sure your answer is valid.                             You <strong>should not</strong> modify anything in the cell below when evaluating it to do a local test of                             your solution.
+You may need to include and evaluate code snippets from lecture notebooks in cells above to make the local test work correctly sometimes (see error messages for clues). This is meant to help you become efficient at recalling materials covered in lectures that relate to this problem. Such local tests will generally not be available in the exam.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1abcb445">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="n">test_instance</span> <span class="o">=</span> <span class="n">ProportionalSpam</span><span class="p">()</span>
+    <span class="n">test_loss</span> <span class="o">=</span> <span class="n">test_instance</span><span class="o">.</span><span class="n">loss</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.2</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]))</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">test_loss</span><span class="o">-</span><span class="mf">1.2828629432232497</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your loss was correct for a test point"</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your loss was not correct on a test point"</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
